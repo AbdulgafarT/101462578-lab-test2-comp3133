@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>SpaceX Launch Missions</h2>
+  
+    <!-- Angular Material Filter Dropdown -->
+    <app-missionfilter (yearSelected)="filterByYear($event)"></app-missionfilter>
+  
+    <!-- Show Loading -->
+    <div *ngIf="launches.length === 0">Loading launches...</div>
+  
+    <!-- Use Angular Material Card for Each Launch -->
+    <mat-card *ngFor="let mission of launches" class="mb-3 mt-3">
+      <mat-card-header>
+        <mat-card-title>
+          <a [routerLink]="['/mission', mission.flight_number]">
+            {{ mission.mission_name }} ({{ mission.launch_year }})
+          </a>
+        </mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p><strong>Flight Number:</strong> {{ mission.flight_number }}</p>
+        <p><strong>Details:</strong> {{ mission.details || 'No details available' }}</p>
+        <p><strong>Rocket:</strong> {{ mission.rocket?.rocket_name }} ({{ mission.rocket?.rocket_type }})</p>
+  
+        <img *ngIf="mission.links?.mission_patch_small"
+             [src]="mission.links.mission_patch_small"
+             width="100"
+             alt="Patch" />
+  
+        <div class="mt-2">
+          <a *ngIf="mission.links?.article_link" [href]="mission.links.article_link" target="_blank">Article</a> |
+          <a *ngIf="mission.links?.wikipedia" [href]="mission.links.wikipedia" target="_blank">Wikipedia</a> |
+          <a *ngIf="mission.links?.video_link" [href]="mission.links.video_link" target="_blank">Video</a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

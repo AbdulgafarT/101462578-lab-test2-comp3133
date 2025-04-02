@@ -1,0 +1,8 @@
+<div class="mb-4">
+    <label for="year" class="form-label">Filter by Launch Year:</label>
+    <select class="form-select" (change)="onYearChange($event)">
+      <option value="">All Years</option>
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+  

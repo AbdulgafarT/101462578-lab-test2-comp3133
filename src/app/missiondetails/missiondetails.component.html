@@ -1,0 +1,9 @@
+<div *ngIf="mission" class="container mt-4">
+    <h2>{{ mission.mission_name }} ({{ mission.launch_year }})</h2>
+    <p><strong>Flight Number:</strong> {{ mission.flight_number }}</p>
+    <p><strong>Details:</strong> {{ mission.details || 'No details available' }}</p>
+    <p><strong>Rocket:</strong> {{ mission.rocket?.rocket_name }} ({{ mission.rocket?.rocket_type }})</p>
+  
+    <img *ngIf="mission.links?.mission_patch_small" [src]="mission.links.mission_patch_small" width="150" alt="Patch">
+  </div>
+  
