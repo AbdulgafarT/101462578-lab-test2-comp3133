@@ -69,5 +69,34 @@ This part of Lab Test 2. It is a standalone Angular application that fetches and
 **Name:** Abdulgafar T.  
 **Course:** COMP 3133
 
+#  SpaceX Missions Viewer - COMP 3133 Lab Test 2
+
+A simple Angular standalone application to view and filter SpaceX launches using the SpaceX REST API.
+
+###  Live Demo:
+[Vercel Deployment](https://101462578-lab-test2-comp3133.vercel.app)
+
+---
+
+## Features
+- View list of SpaceX launches
+- Filter launches by year (via dropdown)
+- View mission details including:
+  - Flight Number
+  - Mission Name
+  - Launch Year
+  - Rocket Name & Type
+  - Patch Image
+  - Links: Article | Wikipedia | Video
+
+---
+
+##  Technologies Used
+- Angular 16+ (Standalone Components)
+- Angular Routing
+- Bootstrap (for styling)
+- SpaceX Launches API
+- Hosted on Vercel
+
 ---
 
