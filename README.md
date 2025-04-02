@@ -63,12 +63,6 @@ This part of Lab Test 2. It is a standalone Angular application that fetches and
 
 ---
 
-##  Developer Info
-
-**Student ID:** 101462578  
-**Name:** Abdulgafar T.  
-**Course:** COMP 3133
-
 #  SpaceX Missions Viewer - COMP 3133 Lab Test 2
 
 A simple Angular standalone application to view and filter SpaceX launches using the SpaceX REST API.
@@ -99,4 +93,52 @@ A simple Angular standalone application to view and filter SpaceX launches using
 - Hosted on Vercel
 
 ---
+
+#  SpaceX Launch Missions - Angular App (Standalone)
+
+This is a standalone Angular 16+ project built for **COMP 3133 Lab Test 2**. The application fetches and displays information about all SpaceX missions using the SpaceX REST API.
+
+##  Project Structure
+
+- `missionlist` - Lists all missions from the API
+- `missionfilter` - Filters missions by launch year
+- `missiondetails` - Displays detailed info about a selected mission
+- `spacex.service.ts` - Centralized HTTP service for API communication
+- `app.config.ts` - Configures routing and HTTP client for standalone app
+
+---
+
+##  Features Implemented
+
+| Feature                                                   | Status |
+|-----------------------------------------------------------|--------|
+| Display all SpaceX missions from API                      | ✅     |
+| Create and use a reusable service                         | ✅     |
+| Filter missions by year using a dropdown                  | ✅     |
+| View detailed mission data using router and route params  | ✅     |
+| Used standalone components and Angular routing            | ✅     |
+
+---
+
+##  Technologies Used
+
+- Angular 16+ (Standalone Components)
+- TypeScript
+- Angular Router
+- RxJS
+- SpaceX REST API: `https://api.spacexdata.com/v3/launches`
+
+---
+
+
+
+
+
+
+
+##  Developer Info
+
+**Student ID:** 101462578  
+**Name:** Abdulgafar T.  
+**Course:** COMP 3133
 
