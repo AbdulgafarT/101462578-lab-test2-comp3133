@@ -1,110 +1,13 @@
-# 101462578-lab-test2-comp3133
+#  SpaceX Launch Missions Viewer  
+**COMP 3133 - Lab Test 2**  
+**Student ID:** 101462578  
+**Name:** Abdulgafar T.
 
-This project is part of COMP 3133 Lab Test 2.
+---
 
 ##  Project Overview
 
-An Angular application that displays a list of SpaceX launches using the SpaceX Launches REST API.  
-It includes:
-
-- A `MissionList` component to display launch information
-- Fields like `flight_number`, `mission_name`, `launch_year`, `details`, `rocket_name`, `rocket_type`
-- Mission patch images and external links to articles, Wikipedia, and videos
-
-##  Technologies Used
-
-- Angular 16+
-- TypeScript
-- SpaceX REST API
-- Vercel (for deployment)
-
-##  Deployment
-
-Live on Vercel (Production):  
-[https://101462578-lab-test2-comp3133-c9vsuu32d.vercel.app](https://101462578-lab-test2-comp3133-c9vsuu32d.vercel.app)
-
-
-  
-  ### 3. Create MissionList
-
-
-   101462578-lab-test2-comp3133
-
-This part of Lab Test 2. It is a standalone Angular application that fetches and displays data from the SpaceX Launches REST API.
-
-##  Technologies Used
-- Angular 16+ (Standalone APIs)
-- TypeScript
-- SpaceX REST API
-- Bootstrap (for styling)
-- Vercel (for deployment)
-
----
-
-##  Features
--  Displays a list of all SpaceX launches
--  Fetches data using an Angular service (`HttpClient`)
--  Shows mission name, launch year, flight number, rocket info, and links (article, wiki, video)
--  Includes responsive card design using Bootstrap
--  Deployed on Vercel
-
----
-
-##  Live Demo
-
-🔗 [View Live on Vercel](https://101462578-lab-test2-comp3133-c9vsuu32d.vercel.app)
-
----
-
-##  API Used
-
-**Endpoint:**  
-`https://api.spacexdata.com/v3/launches`
-
----
-
-#  SpaceX Missions Viewer - COMP 3133 Lab Test 2
-
-A simple Angular standalone application to view and filter SpaceX launches using the SpaceX REST API.
-
-###  Live Demo:
-[Vercel Deployment](https://101462578-lab-test2-comp3133.vercel.app)
-
----
-
-## Features
-- View list of SpaceX launches
-- Filter launches by year (via dropdown)
-- View mission details including:
-  - Flight Number
-  - Mission Name
-  - Launch Year
-  - Rocket Name & Type
-  - Patch Image
-  - Links: Article | Wikipedia | Video
-
----
-
-##  Technologies Used
-- Angular 16+ (Standalone Components)
-- Angular Routing
-- Bootstrap (for styling)
-- SpaceX Launches API
-- Hosted on Vercel
-
----
-
-#  SpaceX Launch Missions - Angular App (Standalone)
-
-This is a standalone Angular 16+ project built for **COMP 3133 Lab Test 2**. The application fetches and displays information about all SpaceX missions using the SpaceX REST API.
-
-##  Project Structure
-
-- `missionlist` - Lists all missions from the API
-- `missionfilter` - Filters missions by launch year
-- `missiondetails` - Displays detailed info about a selected mission
-- `spacex.service.ts` - Centralized HTTP service for API communication
-- `app.config.ts` - Configures routing and HTTP client for standalone app
+This is a standalone Angular 16+ application that fetches and displays a list of SpaceX launches using the SpaceX REST API. The app includes filtering by year, detailed views for each mission, and a responsive UI using Angular Material.
 
 ---
 
@@ -113,32 +16,64 @@ This is a standalone Angular 16+ project built for **COMP 3133 Lab Test 2**. The
 | Feature                                                   | Status |
 |-----------------------------------------------------------|--------|
 | Display all SpaceX missions from API                      | ✅     |
-| Create and use a reusable service                         | ✅     |
-| Filter missions by year using a dropdown                  | ✅     |
+| Create and use a reusable Angular service                 | ✅     |
+| Filter missions by launch year using a dropdown           | ✅     |
 | View detailed mission data using router and route params  | ✅     |
-| Used standalone components and Angular routing            | ✅     |
+| Create interface for mission data structure               | ✅     |
+| Use Angular Material for improved UI                      | ✅     |
+| Standalone Angular Components and Routing                 | ✅     |
+| Hosted and deployed to Vercel                             | ✅     |
+
+---
+
+##  Live Demo
+
+[View the app on Vercel](https://101462578-lab-test2-comp3133-c9vsuu32d.vercel.app)
 
 ---
 
 ##  Technologies Used
 
-- Angular 16+ (Standalone Components)
+- Angular 16+ (Standalone Components API)
 - TypeScript
 - Angular Router
+- Angular Material (UI Components)
 - RxJS
-- SpaceX REST API: `https://api.spacexdata.com/v3/launches`
+- SpaceX REST API  
+  `https://api.spacexdata.com/v3/launches`
+- Vercel (Deployment)
 
 ---
 
+##  Project Structure
 
+- `missionlist` – Displays all launches
+- `missionfilter` – Filters missions by launch year
+- `missiondetails` – Displays detailed view for a selected mission
+- `spacex.service.ts` – Fetches data from the API
+- `app.config.ts` – Configures routing and HTTP client
+- `mission.model.ts` – Defines interface for SpaceX launch data
 
+---
 
+##  Interface: Mission Data Structure
 
+To maintain type safety, the following interface is used throughout the app:
 
-
-##  Developer Info
-
-**Student ID:** 101462578  
-**Name:** Abdulgafar T.  
-**Course:** COMP 3133
-
+```ts
+export interface Mission {
+  flight_number: number;
+  mission_name: string;
+  launch_year: string;
+  details: string;
+  rocket: {
+    rocket_name: string;
+    rocket_type: string;
+  };
+  links: {
+    mission_patch_small: string;
+    article_link: string;
+    wikipedia: string;
+    video_link: string;
+  };
+}
